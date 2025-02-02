@@ -1,0 +1,14 @@
+# Python ile ilgili dosyalar
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+
+# Sanal ortam klasörü
+venv/
+.env
+
+# Node.js ile ilgili dosyalar
+node_modules/
+npm-debug.log
