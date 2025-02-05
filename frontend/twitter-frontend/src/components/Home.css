@@ -1,0 +1,1091 @@
+/* src/components/Home.css */
+
+.home-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.tweet-compose {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tweet-compose textarea {
+  width: 100%;
+  min-height: 100px;
+  border: none;
+  resize: none;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.tweet-compose textarea:focus {
+  outline: none;
+}
+
+.tweet-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.tweet-length {
+  color: #666;
+  font-size: 14px;
+}
+
+.tweet-length.warning {
+  color: #e0245e;
+}
+
+.tweet-button {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.tweet-button:hover {
+  background-color: #1991db;
+}
+
+.tweet-button:disabled {
+  background-color: #9bd1f9;
+  cursor: not-allowed;
+}
+
+.tweet {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.tweet-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 12px;
+  transition: background-color 0.2s;
+}
+
+.tweet-header:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.user-info:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.user-info:hover .name {
+  text-decoration: underline;
+}
+
+.name {
+  font-weight: bold;
+  color: #14171a;
+  margin-bottom: 2px;
+}
+
+.username {
+  color: #657786;
+  font-size: 14px;
+}
+
+.tweet-content {
+  margin: 10px 0;
+  font-size: 16px;
+  cursor: default;
+}
+
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  border-top: 1px solid #e6ecf0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.undo-retweet-button {
+  background: none;
+  border: none;
+  color: #536471;
+  padding: 6px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.undo-retweet-button:hover {
+  color: #f4212e;
+  background-color: rgba(244, 33, 46, 0.1);
+}
+
+.like-button, .comment-button {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.like-button.liked {
+  color: #e0245e;
+}
+
+.comments-section {
+  margin-top: 15px;
+  padding: 15px;
+  border-top: 1px solid #e6ecf0;
+  background-color: #f7f9fa;
+  border-radius: 0 0 15px 15px;
+  width: 100%;
+}
+
+.comments-list {
+  margin-top: 15px;
+}
+
+.comment {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.comment:last-child {
+  border-bottom: none;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comment-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-username {
+  font-weight: bold;
+  color: #14171a;
+}
+
+.comment-content {
+  margin-left: 42px;
+  color: #14171a;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.comment-button {
+  background: none;
+  border: none;
+  color: #536471;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  transition: all 0.2s ease;
+  border-radius: 50px;
+}
+
+.comment-button:hover {
+  color: #1da1f2;
+  background-color: rgba(29, 161, 242, 0.1);
+}
+
+.comment-button.active {
+  color: #1da1f2;
+}
+
+.comment-button i {
+  font-size: 18px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.comment-button:hover i {
+  background-color: rgba(29, 161, 242, 0.1);
+}
+
+.comment-button span {
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #536471;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.like-button:hover {
+    color: #f91880;
+    transform: scale(1.1);
+}
+
+.like-button.liked {
+    color: #f91880;
+    animation: like-pop 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes like-pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.like-button i {
+    font-size: 18px;
+}
+
+.like-button span {
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.comment-box {
+  background-color: white;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.comment-box textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border: 1px solid #e6ecf0;
+  border-radius: 8px;
+  resize: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.comment-box textarea:focus {
+  outline: none;
+  border-color: #1da1f2;
+}
+
+.comment-submit {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  float: right;
+}
+
+.comment-submit:hover {
+  background-color: #1a91da;
+}
+
+.comment-submit:disabled {
+  background-color: #9bd1f9;
+  cursor: not-allowed;
+}
+
+/* Retweet stilleri */
+.retweet-content {
+  margin: 5px 0;
+  padding: 0 0 0 10px;
+}
+
+.retweet-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  color: #536471;
+  font-size: 13px;
+}
+
+.retweet-header i {
+  font-size: 16px;
+}
+
+.retweet-header span {
+  color: #536471;
+}
+
+.retweet-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.retweet-info i {
+  font-size: 14px;
+}
+
+/* Retweet buton stili */
+.retweet-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+  color: #536471;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.retweet-count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.retweet-count i {
+  font-size: 18px;
+}
+
+.retweet-count span {
+  font-size: 13px;
+}
+
+/* Normal durum hover */
+.retweet-button:hover {
+  color: #00ba7c;
+  background-color: rgba(0, 186, 124, 0.1);
+}
+
+/* Retweetlenmiş durum */
+.retweet-button.retweeted {
+  color: #00ba7c;
+}
+
+/* Retweetlenmiş durum hover */
+.retweet-button.retweeted:hover {
+  color: #f4212e;
+  background-color: rgba(244, 33, 46, 0.1);
+}
+
+/* Tooltip */
+.retweet-button:not(.retweeted):hover::before {
+  content: "Retweet";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.retweet-button.retweeted:hover::before {
+  content: "Undo Retweet";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Retweet animasyonu */
+@keyframes retweetPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.retweet-button.retweeted i {
+  animation: retweetPop 0.3s ease;
+}
+
+/* Tweet footer butonları için hover efektleri */
+.tweet-footer button {
+  transition: all 0.2s ease;
+}
+
+.retweet-button {
+  background: none;
+  border: none;
+  color: #536471;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+}
+
+.retweet-button:hover {
+  color: #00ba7c;
+  background-color: rgba(0, 186, 124, 0.1);
+}
+
+.retweet-button.retweeted {
+  color: #00ba7c;
+}
+
+.retweet-button.retweeted:hover {
+  color: #e0245e;
+  background-color: rgba(224, 36, 94, 0.1);
+}
+
+/* Retweet hover tooltip */
+.retweet-button.retweeted:hover::before {
+  content: "Undo Retweet";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.retweet-button:not(.retweeted):hover::before {
+  content: "Retweet";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.comment-user-info {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.comment-user-info:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comment-username {
+  font-weight: bold;
+  margin-left: 8px;
+  color: #14171a;
+}
+
+.comment-username:hover {
+  text-decoration: underline;
+}
+
+.original-tweet .tweet-header {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.original-tweet .tweet-header:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.original-tweet .user-info {
+  cursor: pointer;
+}
+
+.original-tweet .user-info:hover .name {
+  text-decoration: underline;
+}
+
+.original-tweet .name {
+  font-weight: bold;
+  color: #14171a;
+  margin-bottom: 2px;
+}
+
+.original-tweet .username {
+  color: #657786;
+  font-size: 14px;
+}
+
+.delete-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  color: #536471;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.delete-button:hover {
+  color: #f4212e;
+  background-color: rgba(244, 33, 46, 0.1);
+}
+
+.delete-button i {
+  font-size: 14px;
+}
+
+.delete-button span {
+  font-size: 13px;
+}
+
+/* Kullanıcının kendi tweet'leri için özel stil */
+.own-tweet {
+  border-left: 4px solid #1da1f2;
+  background-color: #f8f9fa;
+}
+
+.own-tweet .tweet-header {
+  background-color: rgba(29, 161, 242, 0.05);
+}
+
+.own-tweet:hover {
+  box-shadow: 0 2px 12px rgba(29, 161, 242, 0.1);
+}
+
+/* Kullanıcının kendi retweet'leri için özel stil */
+.own-retweet {
+  color: #536471;
+  font-weight: 500;
+}
+
+.own-retweet i {
+  color: #536471;
+}
+
+/* Tweet sahibini belirten etiket */
+.tweet:not(.own-retweet).own-tweet::after {
+  content: "Your Tweet";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #1da1f2;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Retweet sahibini belirten etiket */
+.tweet.own-tweet.own-retweet .retweet-header::after {
+  content: "Your Retweet";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #00ba7c;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Retweet header pozisyonu için */
+.retweet-header {
+  position: relative;
+}
+
+/* Hover efektleri */
+.own-tweet .tweet-header:hover,
+.own-retweet:hover {
+  background-color: rgba(29, 161, 242, 0.1);
+}
+
+/* Tweet içeriği için özel stil */
+.own-tweet .tweet-text {
+  color: #14171a;
+  font-weight: 400;
+}
+
+/* Tweet footer için özel stil */
+.own-tweet .tweet-footer {
+  border-top: 1px solid rgba(29, 161, 242, 0.2);
+}
+
+/* Tweet sahibi header'ı için stiller */
+.tweet-owner-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #1da1f2;
+  font-size: 13px;
+  padding: 8px 12px;
+  background-color: rgba(29, 161, 242, 0.05);
+  border-radius: 12px 12px 0 0;
+  margin: -15px -15px 10px -15px;
+}
+
+.tweet-owner-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tweet-owner-info i {
+  color: #1da1f2;
+  font-size: 14px;
+}
+
+.tweet-owner-info span {
+  color: #1da1f2;
+  font-weight: 500;
+}
+
+/* Retweet header stillerini güncelle */
+.retweet-info span {
+  color: #00ba7c;
+  font-weight: 500;
+}
+
+/* Hover efektlerini kaldır */
+.tweet-owner-info span:hover,
+.retweet-info span:hover {
+  text-decoration: none;
+  cursor: default;
+}
+
+/* Tweet ve Retweet etiketlerini güncelle */
+.tweet:not(.own-retweet).own-tweet .tweet-owner-header::after {
+  content: "Your Tweet";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #1da1f2;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.tweet.own-tweet.own-retweet .retweet-header::after {
+  content: "Your Retweet";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #00ba7c;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Buton container'ı için stil */
+.action-button-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Like butonu için güncellenmiş stiller */
+.like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #536471;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.like-button:hover {
+  color: #f91880;
+  transform: scale(1.1);
+}
+
+.like-button.liked {
+  color: #f91880;
+  animation: like-pop 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.like-button i {
+  font-size: 18px;
+}
+
+.like-button span {
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+@keyframes like-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Bu stilleri hem normal tweet hem de retweet için uygula */
+.tweet .like-button,
+.original-tweet .like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #536471;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tweet .like-button:hover,
+.original-tweet .like-button:hover {
+  color: #f91880;
+  transform: scale(1.1);
+}
+
+.tweet .like-button.liked,
+.original-tweet .like-button.liked {
+  color: #f91880;
+  animation: like-pop 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Retweet içindeki like butonu için stil */
+.original-tweet .like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #536471;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.original-tweet .like-button:hover {
+  color: #f91880;
+  transform: scale(1.1);
+}
+
+.original-tweet .like-button.liked {
+  color: #f91880;
+  animation: like-pop 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.original-tweet .like-button i {
+  font-size: 18px;
+}
+
+.original-tweet .like-button span {
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.user-profile-link {
+  transition: all 0.2s ease;
+  padding: 8px;
+  border-radius: 12px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.user-profile-link:hover {
+  background-color: rgba(29, 161, 242, 0.1);
+}
+
+.user-profile-link .user-info {
+  margin-left: 12px;
+}
+
+.user-profile-link .name:hover {
+  text-decoration: underline;
+}
+
+.user-profile-link .username {
+  color: #536471;
+}
+
+/* Yorum sayısı için stil */
+.comment-count {
+  color: #536471;
+  font-size: 14px;
+}
+
+/* Yorum yok mesajı */
+.no-comments {
+  text-align: center;
+  color: #657786;
+  padding: 15px;
+  font-size: 14px;
+}
+
+/* Z-index düzenlemeleri */
+.tweet {
+  position: relative;
+  z-index: 1;
+}
+
+.comments-section {
+  position: relative;
+  z-index: 2;
+}
+
+/* Yorum container */
+.comments-container {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f7f9fa;
+  border-top: 1px solid #e6ecf0;
+  border-radius: 0 0 15px 15px;
+}
+
+/* Yorum yazma alanı */
+.comment-input-container {
+  background-color: white;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.comment-input {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border: 1px solid #e6ecf0;
+  border-radius: 8px;
+  resize: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: #1da1f2;
+}
+
+.comment-submit-btn {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  float: right;
+}
+
+/* Yorum listesi */
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment-item {
+  background-color: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.comment-user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.comment-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-user-name {
+  font-weight: bold;
+  color: #14171a;
+}
+
+.comment-username {
+  color: #657786;
+  font-size: 14px;
+}
+
+.comment-text {
+  color: #14171a;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-left: 52px;
+}
+
+.no-comments {
+  text-align: center;
+  color: #657786;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.retweeted-content {
+  padding: 12px;
+  border: 1px solid #e6ecf0;
+  border-radius: 16px;
+  margin: 10px 0;
+  background-color: #f7f9f9;
+}
+
+.retweeted-content:hover {
+  background-color: #f7f9f9;
+}
+
+.retweeted-content .tweet-header {
+  padding: 8px 0;
+}
+
+.retweeted-content .tweet-text {
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.retweeted-content .tweet-text:hover {
+  text-decoration: underline;
+  color: #1da1f2;
+}
+
+.retweet-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  color: #536471;
+  font-size: 13px;
+}
+
+.retweet-header i {
+  font-size: 16px;
+}
+
+.retweeted-content {
+  border: 1px solid #e6ecf0;
+  border-radius: 16px;
+  padding: 12px;
+  margin: 0 16px;
+  background-color: #f7f9f9;
+  transition: background-color 0.2s;
+}
+
+.retweeted-content:hover {
+  background-color: #f0f3f4;
+}
+
+.tweet-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info .name {
+  font-weight: bold;
+  color: #14171a;
+}
+
+.user-info .username {
+  color: #536471;
+  font-size: 14px;
+}
+
+.tweet-text {
+  color: #14171a;
+  font-size: 15px;
+  line-height: 1.4;
+  margin-top: 4px;
+  cursor: default;
+}
+  
