@@ -1,0 +1,232 @@
+.tweet-detail-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  min-height: 100vh;
+}
+
+.tweet-detail-header {
+  padding: 15px;
+  border-bottom: 1px solid #e6ecf0;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.back-button:hover {
+  background-color: rgba(29, 161, 242, 0.1);
+}
+
+.tweet-detail-content {
+  padding: 20px;
+}
+
+.tweet-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.username {
+  color: #536471;
+  font-size: 14px;
+}
+
+.tweet-text {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 15px 0;
+}
+
+.tweet-stats {
+  display: flex;
+  gap: 20px;
+  color: #536471;
+  padding: 15px 0;
+  border-top: 1px solid #e6ecf0;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+.tweet-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 4px 0;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border: none;
+  background: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-button i {
+  font-size: 18px;
+}
+
+.action-button span {
+  font-size: 14px;
+}
+
+.like-button:hover {
+  color: #f91880;
+  background-color: rgba(249, 24, 128, 0.1);
+}
+
+.like-button.liked {
+  color: #f91880;
+}
+
+.retweet-button:hover {
+  color: #00ba7c;
+  background-color: rgba(0, 186, 124, 0.1);
+}
+
+.retweet-button.retweeted {
+  color: #00ba7c;
+}
+
+.retweet-button.retweeted:hover {
+  color: #f4212e;
+  background-color: rgba(244, 33, 46, 0.1);
+}
+
+.comment-button:hover {
+  color: #1da1f2;
+  background-color: rgba(29, 161, 242, 0.1);
+}
+
+.comment-section {
+  margin-top: 20px;
+}
+
+.comment-input-container {
+  padding: 15px 0;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+.comment-input-container textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid #e6ecf0;
+  border-radius: 8px;
+  resize: none;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.reply-button {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  float: right;
+}
+
+.reply-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.comments-list {
+  margin-top: 20px;
+}
+
+.comment-item {
+  display: flex;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-author {
+  margin-bottom: 4px;
+}
+
+.comment-author .name {
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.comment-author .username {
+  color: #536471;
+}
+
+.tweet-metrics {
+  display: flex;
+  padding: 16px 0;
+  border-top: 1px solid #e6ecf0;
+  border-bottom: 1px solid #e6ecf0;
+  margin: 16px 0;
+}
+
+.metric {
+  display: flex;
+  gap: 4px;
+  margin-right: 24px;
+}
+
+.metric .count {
+  font-weight: bold;
+  color: #14171a;
+}
+
+.metric .label {
+  color: #536471;
+}
