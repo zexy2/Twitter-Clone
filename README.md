@@ -1,62 +1,91 @@
-# Database Management Systems Project
+# Twitter Clone
 
-## About the Project
-This project is the development of a social media platform similar to Twitter, which is a database management system application. The application allows users to post tweets, like, comment, and follow other users.
+A Twitter-like social media app built with Flask and React. Made for a Database Management Systems course project.
 
-## Technologies
-- **Backend**: Flask, PostgreSQL
-- **Frontend**: React
-- **Others**: Git, Node.js
+## Features
 
-## Frontend Technologies
-- **HTML**: Used to create the basic structure of the application. The `public/index.html` file contains the HTML that serves as the entry point for the application.
-- **CSS**: Used for styling and design. Various CSS files and style libraries (e.g., Bootstrap or Font Awesome) can be utilized to enhance the appearance of the application.
-- **JavaScript**: Used to provide dynamic content and interactivity. The React library is used to build the user interface and interact with the API.
-- **React**: A JavaScript library used to create the user interface. Its component-based architecture allows for a more modular and manageable application.
+- User registration and login
+- Post tweets (with image support)
+- Like, comment, retweet
+- Follow/unfollow users
+- User profiles with follower counts
+- Explore page with trending content
+- Dark/light theme toggle
 
-## HTML Usage
-- The `public/index.html` file contains the basic HTML structure of the application. This file serves as the entry point when the React application is run.
-- The HTML file includes important components such as meta tags, favicon, style files, and JavaScript links.
+## Tech Stack
 
-## CSS and Styling
-- CSS files and style libraries can be used to enhance the appearance of the application. For example, links for Font Awesome icons have been included.
+**Backend:** Flask, PostgreSQL, psycopg2  
+**Frontend:** React, React Router, Axios
 
-## JavaScript and React
-- React is used to build the user interface. The application is managed through components.
-- Libraries such as Axios or Fetch API can be used for interaction with the API.
+## Setup
 
-## Backend Technologies
-- **Flask**: A lightweight WSGI web application framework in Python. It is used to create the backend of the application.
-- **PostgreSQL**: A powerful, open-source object-relational database system used to store application data.
-- **SQLAlchemy**: An ORM (Object Relational Mapper) used for database interactions in a more Pythonic way.
+### Database
+
+You'll need PostgreSQL running. Create a database and set up the schema (tables for Users, Tweets, Likes, Comments, Followers).
+
+Create a `.env` file in `/backend`:
+
+```
+DATABASE_NAME=twitter_db
+DATABASE_USER=postgres
+DATABASE_PASSWORD=yourpassword
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+```
+
+### Backend
+
+```bash
+cd backend
+pip install flask flask-cors psycopg2-binary python-dotenv bcrypt werkzeug
+python app.py
+```
+
+Runs on `http://localhost:5000`
+
+### Frontend
+
+```bash
+cd frontend/twitter-frontend
+npm install
+npm start
+```
+
+Runs on `http://localhost:3000`
+
+## Project Structure
+
+```
+├── backend/
+│   ├── app.py              # Flask API (all routes)
+│   └── uploads/            # User uploads (profile pics, tweet images)
+├── frontend/
+│   └── twitter-frontend/
+│       └── src/
+│           ├── components/ # React components
+│           └── App.js      # Main app with routing
+└── README.md
+```
 
 ## API Endpoints
-- The backend provides various API endpoints for user registration, login, posting tweets, and more. These endpoints are defined in the `app.py` file in the backend directory.
 
-## Database Structure
-- The database schema includes tables for users, tweets, likes, comments, and followers. This structure allows for efficient data management and retrieval.
+Some key endpoints in `app.py`:
 
-## Installation
-1. **Backend Setup**:
-   - `cd backend`
-   - `pip install -r requirements.txt` (Install the required Python libraries)
-   - Configure the database settings.
+- `POST /register` - Create new user
+- `POST /login` - User login
+- `GET /tweets` - Get feed
+- `POST /tweet` - Create tweet
+- `POST /like` - Like a tweet
+- `POST /comment` - Add comment
+- `POST /follow` - Follow user
+- `GET /user/<id>` - Get user profile
 
-2. **Frontend Setup**:
-   - `cd frontend/twitter-frontend`
-   - `npm install` (Install the required Node.js packages)
-   - `npm start` (Start the application)
+## Notes
 
-## Environment Variables
-To run this application, create a `.env` file in the root directory with the following variables:
-
-
-## Usage
-- You can use the relevant API endpoints for user registration, login, and posting tweets.
-- The frontend application provides the user interface and interacts with the API.
-
-## Contributors
-- Zeki Akgül - Project Owner
+- No JWT auth yet, just simple session handling with localStorage
+- Profile pictures and tweet images are stored in `/backend/uploads`
+- The frontend polls for new tweets every 30 seconds
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+
+MIT
